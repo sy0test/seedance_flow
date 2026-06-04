@@ -47,7 +47,7 @@ web/*
 
 *.sqlite
 
-router.ts
+# router.ts
 
 database.d.ts
 
