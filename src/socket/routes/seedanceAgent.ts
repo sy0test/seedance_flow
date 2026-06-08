@@ -59,14 +59,21 @@ export default (nsp: Namespace) => {
           isolationKey,
           socket,
         });
+        textStream.complete();
+        msg.complete();
       } catch (err: any) {
-        if (err.name !== "AbortError" && !currentController.signal.aborted) {
+        console.error(`[seedanceAgent] chat handler catch:`, err?.stack || err?.message || String(err));
+        if (err.name === "AbortError" || currentController.signal.aborted) {
+          // 被中止或超时：标记 message 为 stop，留空供后续消息继续
+          textStream.complete();
+          msg.stop();
+        } else {
+          // 业务错误：先追加错误文本再 complete（不要反序）
           textStream.append(`\n\n错误: ${u.error(err).message}`);
+          textStream.complete();
           msg.error(u.error(err).message);
         }
       } finally {
-        textStream.complete();
-        msg.complete();
         if (abortController === currentController) {
           abortController = null;
         }
@@ -78,10 +85,10 @@ export default (nsp: Namespace) => {
       abortController = null;
     });
 
-    socket.on("disconnect", () => {
+    socket.on("disconnect", (reason) => {
       abortController?.abort();
       abortController = null;
-      console.log("[seedanceAgent] 已断开:", socket.id);
+      console.log("[seedanceAgent] 已断开:", socket.id, "原因:", reason);
     });
   });
 };

@@ -5,15 +5,33 @@ description: 服化道设计产出模板。定义人物提示词和场景道具�
 
 # 服化道设计产出模板
 
-输出文件（跨集累积，追加式写入）：
-- assets/character-prompts.md — 人物提示词
-- assets/scene-prompts.md — 场景道具提示词
+---
+
+## 【必备】XMl 结构化输出（必须先满足此要求）
+
+在输出服化道设计内容时，**无论 markdown 格式如何排列，输出末尾必须包含**以下 XML 容器标签：
+
+```xml
+<characterPrompts>
+<character name="[角色名]" type="新增/变体/复用">[该角色对应的完整提示词内容]</character>
+<character name="[角色名2]" type="新增/变体/复用">[完整提示词内容]</character>
+</characterPrompts>
+```
+
+场景提示词同理：
+
+```xml
+<scenePrompts>
+<scene name="[场景名]" type="新增">[完整场景描述提示词]</scene>
+</scenePrompts>
+```
+
+**提示词内容必须与前面 markdown 正文中的一致**，不得省略、截断或简化。
+此 XML 是前端解析结构化数据的唯一来源，缺少它将导致页面无法正常展示。
 
 ---
 
 ## 人物提示词格式
-
-文件：assets/character-prompts.md
 
 ```markdown
 # 人物提示词
@@ -38,22 +56,14 @@ description: 服化道设计产出模板。定义人物提示词和场景道具�
 
 ---
 
-## [人物名3]（ep02 新增）
-
-（后续集数的新增人物追加在文件末尾）
-
----
-
 ## [人物名]（ep03 变体：冬装版）
 
-（同一人物的变体追加在文件末尾，标注原版和差异）
+（同一人物不同版本的变体条目，标注原版和差异）
 ```
 
 ---
 
 ## 场景提示词格式
-
-文件：assets/scene-prompts.md
 
 每个场景独立一个条目，格式与人物提示词相同：
 

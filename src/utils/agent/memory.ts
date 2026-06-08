@@ -110,22 +110,28 @@ class Memory {
       const batchIds = batch.map((m) => m.id);
       const batchContents = batch.map((m) => m.content);
 
-      const summaryContent = await this.generateSummary(batchContents);
-      const summaryEmbedding = await getEmbedding(summaryContent);
-      const summaryId = uuidv4();
+      try {
+        const summaryContent = await this.generateSummary(batchContents);
+        const summaryEmbedding = await getEmbedding(summaryContent);
+        const summaryId = uuidv4();
 
-      await u.db("memories").insert({
-        id: summaryId,
-        isolationKey,
-        type: "summary",
-        content: summaryContent,
-        embedding: JSON.stringify(summaryEmbedding),
-        relatedMessageIds: JSON.stringify(batchIds),
-        summarized: 0,
-        createTime: Date.now(),
-      } as any);
+        await u.db("memories").insert({
+          id: summaryId,
+          isolationKey,
+          type: "summary",
+          content: summaryContent,
+          embedding: JSON.stringify(summaryEmbedding),
+          relatedMessageIds: JSON.stringify(batchIds),
+          summarized: 0,
+          createTime: Date.now(),
+        } as any);
+      } catch (e) {
+        // 摘要生成失败（模型未配置/超时等），不阻断主流程
+        // 仍然将消息标记为已总结，防止 shortTerm 无限膨胀撑爆 AI 上下文
+        console.warn(`[Memory] 摘要生成失败: ${u.error(e).message}`);
+      }
 
-      // 标记已总结
+      // 无论摘要成功与否都标记为已总结，防止 undigested 消息无限增长
       await u.db("memories").whereIn("id", batchIds).update({ summarized: 1 });
     }
   }

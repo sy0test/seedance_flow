@@ -9,6 +9,7 @@ export default express.Router().post("/", async (req, res) => {
   // 从 o_storyboard 查询该 episode 的分镜，按 index 排序
   const storyboards = await u.db("o_storyboard")
     .where("scriptId", episodeId)
+    .andWhere("projectId", projectId)
     .orderBy("index")
     .select("id", "prompt", "videoDesc", "index", "track");
 
@@ -41,6 +42,7 @@ export default express.Router().post("/", async (req, res) => {
         assetLinks.map(async (link: any) => {
           const asset = await u.db("o_assets")
             .where("id", link.assetId)
+            .andWhere("projectId", projectId)
             .select("id", "name", "imageId")
             .first();
 

@@ -101,6 +101,14 @@ export default async (knex: Knex): Promise<void> => {
       value: notValModelData.length ? "0" : "1",
     });
   }
+  //检测o_setting是否有trialInstallDate（首次运行写入安装时间）
+  const trialInstallDate = await u.db("o_setting").where("key", "trialInstallDate").first();
+  if (!trialInstallDate) {
+    await u.db("o_setting").insert({
+      key: "trialInstallDate",
+      value: String(Date.now()),
+    });
+  }
   //添加数据基础配置
   const baseAgentList = [
     { key: "seedanceAgent", name: "Seedance Agent", desc: "Seedance 2.0 分镜管线 Agent" },

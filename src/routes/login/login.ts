@@ -38,7 +38,19 @@ export default router.post(
         tokenData?.value as string,
       );
 
-      return res.status(200).send(success({ token: "Bearer " + token, name: data!.name, id: data!.id }, "登录成功"));
+      const trialSetting = await u.db("o_setting").where("key", "trialInstallDate").first();
+      let trialExpired = false;
+      let trialDaysLeft = 30;
+      if (trialSetting) {
+        const installDate = parseInt(trialSetting.value, 10);
+        const elapsedDays = Math.floor((Date.now() - installDate) / (1000 * 60 * 60 * 24));
+        trialDaysLeft = Math.max(0, 30 - elapsedDays);
+        trialExpired = trialDaysLeft <= 0;
+      }
+
+      return res.status(200).send(
+        success({ token: "Bearer " + token, name: data!.name, id: data!.id, trialExpired, trialDaysLeft }, "登录成功"),
+      );
     } else {
       return res.status(400).send(error("用户名或密码错误"));
     }

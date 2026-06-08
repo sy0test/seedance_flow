@@ -1,8 +1,26 @@
 import { serializeError } from "serialize-error";
+import fs from "fs";
+import path from "path";
+
+// 同时写入文件，防止终端滚动丢失崩溃日志
+const logPath = path.join(__dirname, "..", "data", "crash.log");
+function writeCrashLog(header: string, error: any) {
+  try {
+    const lines = [
+      `\n========== ${new Date().toISOString()} ${header} ==========`,
+      error instanceof Error
+        ? `名称: ${error.name}\n消息: ${error.message}\n堆栈: ${error.stack}`
+        : `值: ${JSON.stringify(error, null, 2)}`,
+      "========================================",
+    ].join("\n");
+    fs.appendFileSync(logPath, lines + "\n");
+  } catch {}
+}
 
 // 处理未捕获的 Promise 拒绝
 process.on("unhandledRejection", (reason, promise) => {
   console.error("[未处理的 Promise 拒绝]");
+  writeCrashLog("未处理的 Promise 拒绝", reason);
   if (reason instanceof Error) {
     console.error("错误名称:", reason.name);
     console.error("错误消息:", reason.message);
@@ -23,6 +41,7 @@ process.on("unhandledRejection", (reason, promise) => {
 // 处理未捕获的异常
 process.on("uncaughtException", (error) => {
   console.error("[未捕获的异常]");
+  writeCrashLog("未捕获的异常", error);
   console.error("错误名称:", error.name);
   console.error("错误消息:", error.message);
   console.error("堆栈信息:", error.stack);

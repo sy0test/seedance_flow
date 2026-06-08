@@ -23,8 +23,11 @@ export default router.post(
     const rows = await u
       .db("memories")
       .where({ isolationKey, type: "message" })
-      .orderBy("createTime", "asc")
+      .orderBy("createTime", "desc")
+      .limit(50)
       .select("id", "role", "name", "content", "createTime");
+
+    rows.reverse(); // 保持时间升序
 
     const history = rows.map((row) => ({
       id: row.id,
