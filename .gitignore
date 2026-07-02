@@ -1,0 +1,13 @@
+node_modules
+node_modules/
+build/*
+web/*
+data/oss/*
+data/db2.sqlite
+data/test.sqlite
+dist
+*.sqlite
+data/setting.json
+data/seedance_trace.log
+.DS_Store
+Thumbs.db

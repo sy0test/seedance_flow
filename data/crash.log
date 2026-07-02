@@ -1,0 +1,338 @@
+
+========== 2026-06-27T02:09:28.090Z 未处理的 Promise 拒绝 ==========
+名称: Error
+消息: The module '\\?\D:\CODE2026\toonflow_new\Toonflow-app\node_modules\better-sqlite3\build\Release\better_sqlite3.node'
+was compiled against a different Node.js version using
+NODE_MODULE_VERSION 137. This version of Node.js requires
+NODE_MODULE_VERSION 143. Please try re-compiling or re-installing
+the module (for instance, using `npm rebuild` or `npm install`).
+堆栈: Error: The module '\\?\D:\CODE2026\toonflow_new\Toonflow-app\node_modules\better-sqlite3\build\Release\better_sqlite3.node'
+was compiled against a different Node.js version using
+NODE_MODULE_VERSION 137. This version of Node.js requires
+NODE_MODULE_VERSION 143. Please try re-compiling or re-installing
+the module (for instance, using `npm rebuild` or `npm install`).
+    at process.func [as dlopen] (node:electron/js2c/node_init:2:2617)
+    at Module._extensions..node (node:internal/modules/cjs/loader:1980:18)
+    at Object.func [as .node] (node:electron/js2c/node_init:2:2617)
+    at Module.load (node:internal/modules/cjs/loader:1540:32)
+    at Module._load (node:internal/modules/cjs/loader:1342:12)
+    at c._load (node:electron/js2c/node_init:2:18047)
+    at Module._load (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\runtime-required\runtime-required.js:34:23)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:262:19)
+    at Module.require (node:internal/modules/cjs/loader:1563:12)
+    at require (node:internal/modules/helpers:152:16)
+========================================
+
+========== 2026-06-27T02:12:55.313Z 未处理的 Promise 拒绝 ==========
+名称: Error
+消息: The module '\\?\D:\CODE2026\toonflow_new\Toonflow-app\node_modules\better-sqlite3\build\Release\better_sqlite3.node'
+was compiled against a different Node.js version using
+NODE_MODULE_VERSION 137. This version of Node.js requires
+NODE_MODULE_VERSION 143. Please try re-compiling or re-installing
+the module (for instance, using `npm rebuild` or `npm install`).
+堆栈: Error: The module '\\?\D:\CODE2026\toonflow_new\Toonflow-app\node_modules\better-sqlite3\build\Release\better_sqlite3.node'
+was compiled against a different Node.js version using
+NODE_MODULE_VERSION 137. This version of Node.js requires
+NODE_MODULE_VERSION 143. Please try re-compiling or re-installing
+the module (for instance, using `npm rebuild` or `npm install`).
+    at process.func [as dlopen] (node:electron/js2c/node_init:2:2617)
+    at Module._extensions..node (node:internal/modules/cjs/loader:1980:18)
+    at Object.func [as .node] (node:electron/js2c/node_init:2:2617)
+    at Module.load (node:internal/modules/cjs/loader:1540:32)
+    at Module._load (node:internal/modules/cjs/loader:1342:12)
+    at c._load (node:electron/js2c/node_init:2:18047)
+    at Module._load (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\runtime-required\runtime-required.js:34:23)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:262:19)
+    at Module.require (node:internal/modules/cjs/loader:1563:12)
+    at require (node:internal/modules/helpers:152:16)
+========================================
+
+========== 2026-06-27T02:14:04.031Z 未处理的 Promise 拒绝 ==========
+名称: Error
+消息: The module '\\?\D:\CODE2026\toonflow_new\Toonflow-app\node_modules\better-sqlite3\build\Release\better_sqlite3.node'
+was compiled against a different Node.js version using
+NODE_MODULE_VERSION 137. This version of Node.js requires
+NODE_MODULE_VERSION 143. Please try re-compiling or re-installing
+the module (for instance, using `npm rebuild` or `npm install`).
+堆栈: Error: The module '\\?\D:\CODE2026\toonflow_new\Toonflow-app\node_modules\better-sqlite3\build\Release\better_sqlite3.node'
+was compiled against a different Node.js version using
+NODE_MODULE_VERSION 137. This version of Node.js requires
+NODE_MODULE_VERSION 143. Please try re-compiling or re-installing
+the module (for instance, using `npm rebuild` or `npm install`).
+    at process.func [as dlopen] (node:electron/js2c/node_init:2:2617)
+    at Module._extensions..node (node:internal/modules/cjs/loader:1980:18)
+    at Object.func [as .node] (node:electron/js2c/node_init:2:2617)
+    at Module.load (node:internal/modules/cjs/loader:1540:32)
+    at Module._load (node:internal/modules/cjs/loader:1342:12)
+    at c._load (node:electron/js2c/node_init:2:18047)
+    at Module._load (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\runtime-required\runtime-required.js:34:23)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:262:19)
+    at Module.require (node:internal/modules/cjs/loader:1563:12)
+    at require (node:internal/modules/helpers:152:16)
+========================================
+
+========== 2026-06-27T09:43:54.400Z 未处理的 Promise 拒绝 ==========
+名称: SqliteError
+消息: update `o_novel` set `eventState` = -1, `errorReason` = '软件退出导致失败' where `eventState` = 0 - database is locked
+堆栈: SqliteError: update `o_novel` set `eventState` = -1, `errorReason` = '软件退出导致失败' where `eventState` = 0 - database is locked
+    at Client_BetterSQLite3._query (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\dialects\better-sqlite3\index.js:57:38)
+    at executeQuery (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\internal\query-executioner.js:37:17)
+    at Client_BetterSQLite3.query (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\client.js:157:12)
+    at Runner.query (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\runner.js:141:36)
+    at ensureConnectionCallback (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\internal\ensure-connection-callback.js:13:17)
+    at Runner.ensureConnection (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\runner.js:318:20)
+    at async Runner.run (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\runner.js:30:19)
+    at async default (D:\CODE2026\toonflow_new\Toonflow-app\src\lib\fixDB.ts:26:3)
+    at async <anonymous> (D:\CODE2026\toonflow_new\Toonflow-app\src\utils\db.ts:39:3)
+========================================
+
+========== 2026-06-27T09:45:10.451Z 未处理的 Promise 拒绝 ==========
+名称: SqliteError
+消息: update `o_novel` set `eventState` = -1, `errorReason` = '软件退出导致失败' where `eventState` = 0 - database is locked
+堆栈: SqliteError: update `o_novel` set `eventState` = -1, `errorReason` = '软件退出导致失败' where `eventState` = 0 - database is locked
+    at Client_BetterSQLite3._query (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\dialects\better-sqlite3\index.js:57:38)
+    at executeQuery (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\internal\query-executioner.js:37:17)
+    at Client_BetterSQLite3.query (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\client.js:157:12)
+    at Runner.query (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\runner.js:141:36)
+    at ensureConnectionCallback (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\internal\ensure-connection-callback.js:13:17)
+    at Runner.ensureConnection (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\runner.js:318:20)
+    at async Runner.run (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\runner.js:30:19)
+    at async default (D:\CODE2026\toonflow_new\Toonflow-app\src\lib\fixDB.ts:26:3)
+    at async <anonymous> (D:\CODE2026\toonflow_new\Toonflow-app\src\utils\db.ts:39:3)
+========================================
+
+========== 2026-06-27T09:45:33.868Z 未处理的 Promise 拒绝 ==========
+名称: SqliteError
+消息: update `o_novel` set `eventState` = -1, `errorReason` = '软件退出导致失败' where `eventState` = 0 - database is locked
+堆栈: SqliteError: update `o_novel` set `eventState` = -1, `errorReason` = '软件退出导致失败' where `eventState` = 0 - database is locked
+    at Client_BetterSQLite3._query (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\dialects\better-sqlite3\index.js:57:38)
+    at executeQuery (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\internal\query-executioner.js:37:17)
+    at Client_BetterSQLite3.query (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\client.js:157:12)
+    at Runner.query (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\runner.js:141:36)
+    at ensureConnectionCallback (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\internal\ensure-connection-callback.js:13:17)
+    at Runner.ensureConnection (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\runner.js:318:20)
+    at async Runner.run (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\runner.js:30:19)
+    at async default (D:\CODE2026\toonflow_new\Toonflow-app\src\lib\fixDB.ts:26:3)
+    at async <anonymous> (D:\CODE2026\toonflow_new\Toonflow-app\src\utils\db.ts:39:3)
+========================================
+
+========== 2026-06-27T09:47:02.388Z 未处理的 Promise 拒绝 ==========
+名称: SqliteError
+消息: database is locked
+堆栈: SqliteError: database is locked
+    at Database.pragma (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\better-sqlite3\lib\methods\pragma.js:11:44)
+    at afterCreate (D:\CODE2026\toonflow_new\Toonflow-app\src\utils\db.ts:37:12)
+    at node:internal/util:513:21
+    at new Promise (<anonymous>)
+    at afterCreate (node:internal/util:499:12)
+    at create (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\client.js:339:43)
+========================================
+
+========== 2026-06-27T09:50:30.086Z 未处理的 Promise 拒绝 ==========
+名称: SqliteError
+消息: database is locked
+堆栈: SqliteError: database is locked
+    at Database.pragma (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\better-sqlite3\lib\methods\pragma.js:11:44)
+    at afterCreate (D:\CODE2026\toonflow_new\Toonflow-app\src\utils\db.ts:37:12)
+    at node:internal/util:513:21
+    at new Promise (<anonymous>)
+    at afterCreate (node:internal/util:499:12)
+    at create (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\client.js:339:43)
+========================================
+
+========== 2026-06-27T10:03:39.543Z 未处理的 Promise 拒绝 ==========
+名称: SqliteError
+消息: update `o_novel` set `eventState` = -1, `errorReason` = '软件退出导致失败' where `eventState` = 0 - database is locked
+堆栈: SqliteError: update `o_novel` set `eventState` = -1, `errorReason` = '软件退出导致失败' where `eventState` = 0 - database is locked
+    at Client_BetterSQLite3._query (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\dialects\better-sqlite3\index.js:57:38)
+    at executeQuery (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\internal\query-executioner.js:37:17)
+    at Client_BetterSQLite3.query (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\client.js:157:12)
+    at Runner.query (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\runner.js:141:36)
+    at ensureConnectionCallback (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\internal\ensure-connection-callback.js:13:17)
+    at Runner.ensureConnection (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\runner.js:318:20)
+    at async Runner.run (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\runner.js:30:19)
+    at async default (D:\CODE2026\toonflow_new\Toonflow-app\src\lib\fixDB.ts:26:3)
+    at async <anonymous> (D:\CODE2026\toonflow_new\Toonflow-app\src\utils\db.ts:39:3)
+========================================
+
+========== 2026-06-27T10:05:31.238Z 未处理的 Promise 拒绝 ==========
+名称: SqliteError
+消息: update `o_novel` set `eventState` = -1, `errorReason` = '软件退出导致失败' where `eventState` = 0 - database is locked
+堆栈: SqliteError: update `o_novel` set `eventState` = -1, `errorReason` = '软件退出导致失败' where `eventState` = 0 - database is locked
+    at Client_BetterSQLite3._query (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\dialects\better-sqlite3\index.js:57:38)
+    at executeQuery (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\internal\query-executioner.js:37:17)
+    at Client_BetterSQLite3.query (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\client.js:157:12)
+    at Runner.query (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\runner.js:141:36)
+    at ensureConnectionCallback (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\internal\ensure-connection-callback.js:13:17)
+    at Runner.ensureConnection (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\runner.js:318:20)
+    at async Runner.run (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\runner.js:30:19)
+    at async default (D:\CODE2026\toonflow_new\Toonflow-app\src\lib\fixDB.ts:26:3)
+    at async <anonymous> (D:\CODE2026\toonflow_new\Toonflow-app\src\utils\db.ts:45:3)
+========================================
+
+========== 2026-06-27T10:05:53.038Z 未处理的 Promise 拒绝 ==========
+名称: SqliteError
+消息: update `o_novel` set `eventState` = -1, `errorReason` = '软件退出导致失败' where `eventState` = 0 - database is locked
+堆栈: SqliteError: update `o_novel` set `eventState` = -1, `errorReason` = '软件退出导致失败' where `eventState` = 0 - database is locked
+    at Client_BetterSQLite3._query (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\dialects\better-sqlite3\index.js:57:38)
+    at executeQuery (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\internal\query-executioner.js:37:17)
+    at Client_BetterSQLite3.query (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\client.js:157:12)
+    at Runner.query (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\runner.js:141:36)
+    at ensureConnectionCallback (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\internal\ensure-connection-callback.js:13:17)
+    at Runner.ensureConnection (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\runner.js:318:20)
+    at async Runner.run (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\runner.js:30:19)
+    at async default (D:\CODE2026\toonflow_new\Toonflow-app\src\lib\fixDB.ts:26:3)
+    at async <anonymous> (D:\CODE2026\toonflow_new\Toonflow-app\src\utils\db.ts:39:3)
+========================================
+
+========== 2026-06-27T10:06:25.833Z 未处理的 Promise 拒绝 ==========
+名称: SqliteError
+消息: update `o_novel` set `eventState` = -1, `errorReason` = '软件退出导致失败' where `eventState` = 0 - database is locked
+堆栈: SqliteError: update `o_novel` set `eventState` = -1, `errorReason` = '软件退出导致失败' where `eventState` = 0 - database is locked
+    at Client_BetterSQLite3._query (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\dialects\better-sqlite3\index.js:57:38)
+    at executeQuery (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\internal\query-executioner.js:37:17)
+    at Client_BetterSQLite3.query (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\client.js:157:12)
+    at Runner.query (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\runner.js:141:36)
+    at ensureConnectionCallback (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\internal\ensure-connection-callback.js:13:17)
+    at Runner.ensureConnection (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\runner.js:318:20)
+    at async Runner.run (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\runner.js:30:19)
+    at async default (D:\CODE2026\toonflow_new\Toonflow-app\src\lib\fixDB.ts:26:3)
+    at async <anonymous> (D:\CODE2026\toonflow_new\Toonflow-app\src\utils\db.ts:39:3)
+========================================
+
+========== 2026-06-27T10:11:20.319Z 未处理的 Promise 拒绝 ==========
+名称: SqliteError
+消息: update `o_novel` set `eventState` = -1, `errorReason` = '软件退出导致失败' where `eventState` = 0 - database is locked
+堆栈: SqliteError: update `o_novel` set `eventState` = -1, `errorReason` = '软件退出导致失败' where `eventState` = 0 - database is locked
+    at Client_BetterSQLite3._query (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\dialects\better-sqlite3\index.js:57:38)
+    at executeQuery (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\internal\query-executioner.js:37:17)
+    at Client_BetterSQLite3.query (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\client.js:157:12)
+    at Runner.query (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\runner.js:141:36)
+    at ensureConnectionCallback (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\internal\ensure-connection-callback.js:13:17)
+    at Runner.ensureConnection (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\runner.js:318:20)
+    at async Runner.run (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\runner.js:30:19)
+    at async default (D:\CODE2026\toonflow_new\Toonflow-app\src\lib\fixDB.ts:26:3)
+    at async <anonymous> (D:\CODE2026\toonflow_new\Toonflow-app\src\utils\db.ts:39:3)
+========================================
+
+========== 2026-06-27T10:11:20.344Z 未处理的 Promise 拒绝 ==========
+名称: Error
+消息: Server is not running.
+堆栈: Error [ERR_SERVER_NOT_RUNNING]: Server is not running.
+    at Server.close (node:net:2367:12)
+    at Object.onceWrapper (node:events:622:28)
+    at Server.emit (node:events:508:28)
+    at emitCloseNT (node:net:2427:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+========================================
+
+========== 2026-06-27T10:11:42.003Z 未处理的 Promise 拒绝 ==========
+名称: SqliteError
+消息: update `o_novel` set `eventState` = -1, `errorReason` = '软件退出导致失败' where `eventState` = 0 - database is locked
+堆栈: SqliteError: update `o_novel` set `eventState` = -1, `errorReason` = '软件退出导致失败' where `eventState` = 0 - database is locked
+    at Client_BetterSQLite3._query (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\dialects\better-sqlite3\index.js:57:38)
+    at executeQuery (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\internal\query-executioner.js:37:17)
+    at Client_BetterSQLite3.query (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\client.js:157:12)
+    at Runner.query (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\runner.js:141:36)
+    at ensureConnectionCallback (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\internal\ensure-connection-callback.js:13:17)
+    at Runner.ensureConnection (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\runner.js:318:20)
+    at async Runner.run (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\runner.js:30:19)
+    at async default (D:\CODE2026\toonflow_new\Toonflow-app\src\lib\fixDB.ts:26:3)
+    at async <anonymous> (D:\CODE2026\toonflow_new\Toonflow-app\src\utils\db.ts:39:3)
+========================================
+
+========== 2026-06-27T10:12:06.197Z 未处理的 Promise 拒绝 ==========
+名称: SqliteError
+消息: update `o_novel` set `eventState` = -1, `errorReason` = '软件退出导致失败' where `eventState` = 0 - database is locked
+堆栈: SqliteError: update `o_novel` set `eventState` = -1, `errorReason` = '软件退出导致失败' where `eventState` = 0 - database is locked
+    at Client_BetterSQLite3._query (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\dialects\better-sqlite3\index.js:57:38)
+    at executeQuery (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\internal\query-executioner.js:37:17)
+    at Client_BetterSQLite3.query (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\client.js:157:12)
+    at Runner.query (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\runner.js:141:36)
+    at ensureConnectionCallback (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\internal\ensure-connection-callback.js:13:17)
+    at Runner.ensureConnection (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\runner.js:318:20)
+    at async Runner.run (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\runner.js:30:19)
+    at async default (D:\CODE2026\toonflow_new\Toonflow-app\src\lib\fixDB.ts:26:3)
+    at async <anonymous> (D:\CODE2026\toonflow_new\Toonflow-app\src\utils\db.ts:39:3)
+========================================
+
+========== 2026-06-27T10:15:56.598Z 未处理的 Promise 拒绝 ==========
+名称: SqliteError
+消息: update `o_novel` set `eventState` = -1, `errorReason` = '软件退出导致失败' where `eventState` = 0 - database is locked
+堆栈: SqliteError: update `o_novel` set `eventState` = -1, `errorReason` = '软件退出导致失败' where `eventState` = 0 - database is locked
+    at Client_BetterSQLite3._query (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\dialects\better-sqlite3\index.js:57:38)
+    at executeQuery (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\internal\query-executioner.js:37:17)
+    at Client_BetterSQLite3.query (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\client.js:157:12)
+    at Runner.query (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\runner.js:141:36)
+    at ensureConnectionCallback (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\internal\ensure-connection-callback.js:13:17)
+    at Runner.ensureConnection (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\runner.js:318:20)
+    at async Runner.run (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\execution\runner.js:30:19)
+    at async default (D:\CODE2026\toonflow_new\Toonflow-app\src\lib\fixDB.ts:26:3)
+    at async <anonymous> (D:\CODE2026\toonflow_new\Toonflow-app\src\utils\db.ts:39:3)
+========================================
+
+========== 2026-06-30T22:54:23.607Z 未处理的 Promise 拒绝 ==========
+名称: Error
+消息: The module '\\?\D:\CODE2026\toonflow_new\Toonflow-app\node_modules\better-sqlite3\build\Release\better_sqlite3.node'
+was compiled against a different Node.js version using
+NODE_MODULE_VERSION 143. This version of Node.js requires
+NODE_MODULE_VERSION 137. Please try re-compiling or re-installing
+the module (for instance, using `npm rebuild` or `npm install`).
+堆栈: Error: The module '\\?\D:\CODE2026\toonflow_new\Toonflow-app\node_modules\better-sqlite3\build\Release\better_sqlite3.node'
+was compiled against a different Node.js version using
+NODE_MODULE_VERSION 143. This version of Node.js requires
+NODE_MODULE_VERSION 137. Please try re-compiling or re-installing
+the module (for instance, using `npm rebuild` or `npm install`).
+    at Object..node (node:internal/modules/cjs/loader:1988:18)
+    at Module.load (node:internal/modules/cjs/loader:1553:32)
+    at Module._load (node:internal/modules/cjs/loader:1355:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.require (node:internal/modules/cjs/loader:1576:12)
+    at require (node:internal/modules/helpers:153:16)
+    at bindings (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\bindings\bindings.js:112:48)
+    at new Database (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\better-sqlite3\lib\database.js:48:64)
+    at Client_BetterSQLite3.acquireRawConnection (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\dialects\better-sqlite3\index.js:14:16)
+    at create (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\knex\lib\client.js:333:39)
+========================================
+
+========== 2026-07-01T01:29:18.392Z 未捕获的异常 ==========
+名称: TransformError
+消息: Transform failed with 1 error:
+D:\CODE2026\toonflow_new\Toonflow-app\src\utils\syncStoryboardShots.ts:158:50: ERROR: Unexpected "："
+堆栈: Error: Transform failed with 1 error:
+D:\CODE2026\toonflow_new\Toonflow-app\src\utils\syncStoryboardShots.ts:158:50: ERROR: Unexpected "："
+    at failureErrorWithLog (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\esbuild\lib\main.js:1748:15)
+    at D:\CODE2026\toonflow_new\Toonflow-app\node_modules\esbuild\lib\main.js:1017:50
+    at responseCallbacks.<computed> (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\esbuild\lib\main.js:884:9)
+    at handleIncomingPacket (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\esbuild\lib\main.js:939:12)
+    at Socket.readFromStdout (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\esbuild\lib\main.js:862:7)
+    at Socket.emit (node:events:509:28)
+    at addChunk (node:internal/streams/readable:563:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:514:3)
+    at Readable.push (node:internal/streams/readable:394:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+========================================
+
+========== 2026-07-02T10:18:57.879Z 未处理的 Promise 拒绝 ==========
+名称: Error
+消息: The module '\\?\D:\CODE2026\toonflow_new\Toonflow-app\node_modules\better-sqlite3\build\Release\better_sqlite3.node'
+was compiled against a different Node.js version using
+NODE_MODULE_VERSION 137. This version of Node.js requires
+NODE_MODULE_VERSION 143. Please try re-compiling or re-installing
+the module (for instance, using `npm rebuild` or `npm install`).
+堆栈: Error: The module '\\?\D:\CODE2026\toonflow_new\Toonflow-app\node_modules\better-sqlite3\build\Release\better_sqlite3.node'
+was compiled against a different Node.js version using
+NODE_MODULE_VERSION 137. This version of Node.js requires
+NODE_MODULE_VERSION 143. Please try re-compiling or re-installing
+the module (for instance, using `npm rebuild` or `npm install`).
+    at process.func [as dlopen] (node:electron/js2c/node_init:2:2617)
+    at Module._extensions..node (node:internal/modules/cjs/loader:1980:18)
+    at Object.func [as .node] (node:electron/js2c/node_init:2:2617)
+    at Module.load (node:internal/modules/cjs/loader:1540:32)
+    at Module._load (node:internal/modules/cjs/loader:1342:12)
+    at c._load (node:electron/js2c/node_init:2:18047)
+    at Module._load (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\runtime-required\runtime-required.js:34:23)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:262:19)
+    at Module.require (node:internal/modules/cjs/loader:1563:12)
+    at require (node:internal/modules/helpers:152:16)
+========================================
