@@ -1,0 +1,57 @@
+
+========== 2026-07-02T11:32:39.435Z 未处理的 Promise 拒绝 ==========
+名称: Error
+消息: ENOENT: no such file or directory, open 'D:\CODE2026\toonflow_new\Toonflow-app\src\types\database.d.ts'
+堆栈: Error: ENOENT: no such file or directory, open 'D:\CODE2026\toonflow_new\Toonflow-app\src\types\database.d.ts'
+    at async open (node:internal/fs/promises:640:25)
+    at async writeFile (node:internal/fs/promises:1257:14)
+    at async initKnexType (D:\CODE2026\toonflow_new\Toonflow-app\src\utils\db.ts:91:18)
+========================================
+
+========== 2026-07-02T11:34:41.396Z 未处理的 Promise 拒绝 ==========
+名称: Error
+消息: The module '\\?\D:\CODE2026\toonflow_new\Toonflow-app\node_modules\better-sqlite3\build\Release\better_sqlite3.node'
+was compiled against a different Node.js version using
+NODE_MODULE_VERSION 137. This version of Node.js requires
+NODE_MODULE_VERSION 143. Please try re-compiling or re-installing
+the module (for instance, using `npm rebuild` or `npm install`).
+堆栈: Error: The module '\\?\D:\CODE2026\toonflow_new\Toonflow-app\node_modules\better-sqlite3\build\Release\better_sqlite3.node'
+was compiled against a different Node.js version using
+NODE_MODULE_VERSION 137. This version of Node.js requires
+NODE_MODULE_VERSION 143. Please try re-compiling or re-installing
+the module (for instance, using `npm rebuild` or `npm install`).
+    at process.func [as dlopen] (node:electron/js2c/node_init:2:2617)
+    at Module._extensions..node (node:internal/modules/cjs/loader:1980:18)
+    at Object.func [as .node] (node:electron/js2c/node_init:2:2617)
+    at Module.load (node:internal/modules/cjs/loader:1540:32)
+    at Module._load (node:internal/modules/cjs/loader:1342:12)
+    at c._load (node:electron/js2c/node_init:2:18047)
+    at Module._load (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\runtime-required\runtime-required.js:34:23)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:262:19)
+    at Module.require (node:internal/modules/cjs/loader:1563:12)
+    at require (node:internal/modules/helpers:152:16)
+========================================
+
+========== 2026-07-02T11:36:17.154Z 未处理的 Promise 拒绝 ==========
+名称: Error
+消息: The module '\\?\D:\CODE2026\toonflow_new\Toonflow-app\node_modules\better-sqlite3\build\Release\better_sqlite3.node'
+was compiled against a different Node.js version using
+NODE_MODULE_VERSION 137. This version of Node.js requires
+NODE_MODULE_VERSION 143. Please try re-compiling or re-installing
+the module (for instance, using `npm rebuild` or `npm install`).
+堆栈: Error: The module '\\?\D:\CODE2026\toonflow_new\Toonflow-app\node_modules\better-sqlite3\build\Release\better_sqlite3.node'
+was compiled against a different Node.js version using
+NODE_MODULE_VERSION 137. This version of Node.js requires
+NODE_MODULE_VERSION 143. Please try re-compiling or re-installing
+the module (for instance, using `npm rebuild` or `npm install`).
+    at process.func [as dlopen] (node:electron/js2c/node_init:2:2617)
+    at Module._extensions..node (node:internal/modules/cjs/loader:1980:18)
+    at Object.func [as .node] (node:electron/js2c/node_init:2:2617)
+    at Module.load (node:internal/modules/cjs/loader:1540:32)
+    at Module._load (node:internal/modules/cjs/loader:1342:12)
+    at c._load (node:electron/js2c/node_init:2:18047)
+    at Module._load (D:\CODE2026\toonflow_new\Toonflow-app\node_modules\runtime-required\runtime-required.js:34:23)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:262:19)
+    at Module.require (node:internal/modules/cjs/loader:1563:12)
+    at require (node:internal/modules/helpers:152:16)
+========================================
