@@ -19,7 +19,6 @@ files:
   - "!scripts/*.ts"
 
 asar: true
-npmRebuild: false
 asarUnpack:
   - "**/node_modules/sharp/**"
   - "**/node_modules/@img/**"
