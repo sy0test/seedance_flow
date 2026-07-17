@@ -190,7 +190,6 @@ import route186 from "./routes/task/getTaskApi";
 import route187 from "./routes/task/getTaskCategories";
 import route188 from "./routes/task/taskDetails";
 import route189 from "./routes/test/test";
-import route190 from "./routes/trial/status";
 
 export default async (app: Express) => {
   app.use("/api/agents/clearMemory", route1);
@@ -382,5 +381,4 @@ export default async (app: Express) => {
   app.use("/api/task/getTaskCategories", route187);
   app.use("/api/task/taskDetails", route188);
   app.use("/api/test/test", route189);
-  app.use("/api/trial/status", route190);
 }

@@ -110,7 +110,6 @@ export default async function startServe(randomPort: Boolean = false) {
     // 白名单路径
     if (req.path === "/api/login/login") return next();
     if (req.path === "/api/seedance-video/migrateVideoTrackId") return next();
-    if (req.path === "/api/trial/status") return next();
 
     if (!token) return res.status(401).send({ message: "未提供token" });
     try {
@@ -119,24 +118,6 @@ export default async function startServe(randomPort: Boolean = false) {
       next();
     } catch (err) {
       return res.status(401).send({ message: "无效的token" });
-    }
-  });
-
-  // 试用期检查中间件 - 到期后所有 API 返回 402
-  app.use(async (req, res, next) => {
-    const trialWhitelist = ["/api/login/login", "/api/trial/status"];
-    if (trialWhitelist.includes(req.path)) return next();
-    try {
-      const setting = await u.db("o_setting").where("key", "trialInstallDate").first();
-      if (setting) {
-        const elapsedDays = Math.floor((Date.now() - parseInt(setting.value, 10)) / (1000 * 60 * 60 * 24));
-        if (elapsedDays >= 30) {
-          return res.status(402).send({ message: "trial_expired", detail: "30-day trial has expired." });
-        }
-      }
-      next();
-    } catch (err) {
-      next(err);
     }
   });
 
