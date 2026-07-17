@@ -50,6 +50,7 @@ function parseContainerXml(content: string): Record<string, any[]> {
 export interface DirectorAnalysisNames {
   characters: Array<{ name: string; type: string; description: string }>;
   scenes: Array<{ name: string; type: string; description: string }>;
+  props: Array<{ name: string; type: string; description: string }>;
 }
 
 /** 解析导演分析阶段 XML，只返回名称清单，不写 o_assets */
@@ -57,6 +58,7 @@ export function parseDirectorAnalysisOutput(content: string): DirectorAnalysisNa
   const xmlData = parseContainerXml(content);
   const characters: Array<{ name: string; type: string; description: string }> = [];
   const scenes: Array<{ name: string; type: string; description: string }> = [];
+  const props: Array<{ name: string; type: string; description: string }> = [];
 
   if (xmlData.characters) {
     for (const item of xmlData.characters) {
@@ -82,7 +84,17 @@ export function parseDirectorAnalysisOutput(content: string): DirectorAnalysisNa
     }
   }
 
-  return { characters, scenes };
+  if (xmlData.props) {
+    for (const item of xmlData.props) {
+      props.push({
+        name: item.name || "",
+        type: item.type || "新增",
+        description: item.description || "",
+      });
+    }
+  }
+
+  return { characters, scenes, props };
 }
 
 /**
@@ -99,11 +111,13 @@ export async function resolveArtDesignAssets(
 ): Promise<{
   characterPrompts: Array<{ name: string; assetId: number; prompt: string }>;
   scenePrompts: Array<{ name: string; assetId: number; prompt: string }>;
+  propPrompts: Array<{ name: string; assetId: number; prompt: string }>;
 }> {
   const xmlData = parseContainerXml(content);
   const now = Date.now();
   const characterPrompts: Array<{ name: string; assetId: number; prompt: string }> = [];
   const scenePrompts: Array<{ name: string; assetId: number; prompt: string }> = [];
+  const propPrompts: Array<{ name: string; assetId: number; prompt: string }> = [];
 
   // ── 角色 ──
   if (xmlData.characterPrompts) {
@@ -239,5 +253,71 @@ export async function resolveArtDesignAssets(
     }
   }
 
-  return { characterPrompts, scenePrompts };
+  // ── 道具 ──
+  if (xmlData.propPrompts) {
+    const names = xmlData.propPrompts
+      .map((p: any) => p.name || "")
+      .filter(Boolean);
+    const existing = names.length > 0
+      ? await db("o_assets")
+          .where("projectId", projectId)
+          .whereIn("name", names)
+          .where("type", "tool")
+          .select("id", "name")
+      : [];
+    const nameToId = new Map(existing.map((a: any) => [a.name, a.id]));
+
+    for (const item of xmlData.propPrompts) {
+      let name = item.name || "";
+      const prompt = item.value || "";
+      const itemType = item.type || "新增";
+      let assetId = nameToId.get(name);
+
+      if (assetId) {
+        if (itemType === "变体") {
+          let variantName = name + "（变体）";
+          let suffix = 2;
+          while (nameToId.has(variantName)) {
+            variantName = name + `（变体${suffix}）`;
+            suffix++;
+          }
+          const [newId] = await db("o_assets").insert({
+            projectId,
+            name: variantName,
+            type: "tool",
+            describe: variantName,
+            prompt,
+            promptState: "已完成",
+            startTime: now,
+          } as any);
+          assetId = newId;
+          nameToId.set(variantName, assetId);
+        } else if (prompt) {
+          await db("o_assets").where("id", assetId).update({
+            prompt,
+            promptState: "已完成",
+            describe: name,
+          });
+        }
+      } else if (prompt) {
+        const [newId] = await db("o_assets").insert({
+          projectId,
+          name,
+          type: "tool",
+          describe: name,
+          prompt,
+          promptState: "已完成",
+          startTime: now,
+        } as any);
+        assetId = newId;
+        nameToId.set(name, assetId);
+      }
+
+      if (assetId) {
+        propPrompts.push({ name, assetId, prompt });
+      }
+    }
+  }
+
+  return { characterPrompts, scenePrompts, propPrompts };
 }

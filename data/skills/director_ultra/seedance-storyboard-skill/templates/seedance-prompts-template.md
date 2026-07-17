@@ -15,10 +15,11 @@ description: ULTRA 版 Seedance 2.0 提示词产出模板。好莱坞导演级�
 <references>
 <reference ref="@图1" name="林薇" type="人物参考" />
 <reference ref="@图2" name="办公室" type="场景参考" />
+<reference ref="@图3" name="长剑" type="道具参考" />
 </references>
 
 <shots>
-<shot id="P01" duration="10" characters="林薇@图1,夜（黑豹）" scenes="王国大厅@图3">【导演视觉与听觉宣言 / Director's Vision】真人写实奇幻短剧质感，16:9 宽银幕构图，以宏伟圆形议事大厅为视觉基底，冷蓝高窗光与桌面烛火形成冷暖分裂，制造"哀悼被权力亵渎"的压迫氛围。
+<shot id="P01" duration="10" characters="林薇@图1,夜（黑豹）" scenes="王国大厅@图2" props="长剑@图3">【导演视觉与听觉宣言 / Director's Vision】真人写实奇幻短剧质感，16:9 宽银幕构图，以宏伟圆形议事大厅为视觉基底，冷蓝高窗光与桌面烛火形成冷暖分裂，制造"哀悼被权力亵渎"的压迫氛围。
 *00:00 - 00:03 | 穹顶压下 / Descending Establishing Shot*
 【下降建立镜头 / Descending Establishing Shot】镜头从高耸穹顶缓慢俯冲，古老魔法图腾和王室纹样掠过画面，最终压到中央圆桌。
 光影设计：灰蓝冷光从左上方高窗斜落，与桌面烛火的暖黄形成强烈冷暖分裂。

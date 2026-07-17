@@ -78,9 +78,10 @@ export async function runMiwoWithStream(ctx: ChatPipelineContext): Promise<void>
   const existingAssets = await Promise.all([
     loadExistingAssets(episode.projectId, "character"),
     loadExistingAssets(episode.projectId, "scene"),
+    loadExistingAssets(episode.projectId, "tool"),
   ]);
-  const assetBlock = existingAssets[0] || existingAssets[1]
-    ? `\n\n## 已有素材库（o_assets）\n### 角色资产\n${existingAssets[0]}\n### 场景资产\n${existingAssets[1]}`
+  const assetBlock = existingAssets[0] || existingAssets[1] || existingAssets[2]
+    ? `\n\n## 已有素材库（o_assets）\n### 角色资产\n${existingAssets[0]}\n### 场景资产\n${existingAssets[1]}\n### 道具资产\n${existingAssets[2]}`
     : "";
 
   // 剧本内容
@@ -278,8 +279,9 @@ async function readStageOutput(isolationKey: string, episodeId: number, role: st
 }
 
 async function loadExistingAssets(projectId: number, type: string): Promise<string> {
+  const assetType = type === "character" ? "role" : type === "tool" ? "tool" : "scene";
   const assets = await u.db("o_assets")
-    .where({ projectId, type: type === "character" ? "role" : "scene" })
+    .where({ projectId, type: assetType })
     .select("name", "prompt", "id");
   if (!assets.length) return "";
   return assets.map((a: any) => `- ${a.name} (id=${a.id}) | 提示词：${a.prompt || "无"}`).join("\n");
