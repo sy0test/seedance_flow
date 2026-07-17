@@ -39,6 +39,9 @@ jobs:
       - name: 安装依赖
         run: yarn install --frozen-lockfile
 
+      - name: 重建 better-sqlite3
+        run: npx @electron/rebuild -m . -o better-sqlite3
+
       - name: 打包 Windows 安装程序
         run: yarn dist:win --${{ matrix.arch }}
         env:
@@ -78,6 +81,9 @@ jobs:
 
       - name: 安装依赖
         run: yarn install --frozen-lockfile
+
+      - name: 重建 better-sqlite3
+        run: npx @electron/rebuild -m . -o better-sqlite3
 
       - name: 打包 macOS 安装程序
         run: yarn dist:mac --${{ matrix.arch }}
@@ -137,7 +143,7 @@ jobs:
 
             ## 🚀 安装说明
 
-            - **Windows**：下载 `.exe` 文件，双击运行安装向导即可。如遇 DLL 缺失，请安装 [VC++ 运行库](https://aka.ms/vs/17/release/vc_redist.x64.exe)。
+            - **Windows**：下载 `.exe` 文件，双击运行安装向导即可。
             - **macOS**：下载 `.dmg` 文件，打开后将应用拖入「应用程序」。首次打开如遇安全提示，前往「系统设置 → 隐私与安全性」允许运行。
 
             ---
